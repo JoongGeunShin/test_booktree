@@ -25,7 +25,7 @@ import retrofit2.Response;
 
 public class SignupActivity extends AppCompatActivity {
     private EditText mEmailView;
-    private EditText mPasswordView;
+    private EditText mPasswordView, mpasswordCheckView;
     private EditText mNameView;
     private Button mSignUpButton;
     private ServiceApi service;
@@ -84,23 +84,19 @@ public class SignupActivity extends AppCompatActivity {
             mEmailView.setError("비밀번호를 입력해주세요.");
             focusView = mEmailView;
             cancel = true;
-        } else if (!isPasswordValid(password)) {
+        }/* else if (!isPasswordValid(password)) {
             mPasswordView.setError("6자 이상의 비밀번호를 입력해주세요.");
             focusView = mPasswordView;
             cancel = true;
-        }
+        }*/
+
 
         // 이메일의 유효성 검사
         if (email.isEmpty()) {
             mEmailView.setError("이메일을 입력해주세요.");
             focusView = mEmailView;
             cancel = true;
-        } else if (!isEmailValid(email)) {
-            mEmailView.setError("@를 포함한 유효한 이메일을 입력해주세요.");
-            focusView = mEmailView;
-            cancel = true;
         }
-
         // 이름의 유효성 검사
         if (name.isEmpty()) {
             mNameView.setError("이름을 입력해주세요.");
@@ -138,10 +134,6 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
-    private boolean isEmailValid(String email) {
-        return email.contains("@");
-    }
-
     private boolean isPasswordValid(String password) {
         return password.length() >= 6;
     }
@@ -156,66 +148,5 @@ public class SignupActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-/*
-    View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.SignUpButton:
-                    Log.e("클릭", "클릭");
-                    signUp();
-                    break;
-                case R.id.gotoLoginButton:
-                    startLoginActivity();
-                    break;
-            }
-
-        }
-    };
-
-    private void signUp() {
-        EditText emailE = (EditText) findViewById(R.id.emailEditText);
-        String email = emailE.getText().toString();
-        EditText passwordE = (EditText) findViewById(R.id.passwordEditText);
-        String password = passwordE.getText().toString();
-        EditText passwordCheckE = (EditText) findViewById(R.id.passwordCheckEditText);
-        String passwordCheck = passwordCheckE.getText().toString();
-
-         (email.length() > 0 && password.length() > 0 && passwordCheck.length() > 0) {
-            if (password.equals(passwordCheck)) {
-                Task<AuthResult> authResultTask = mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(this,
-                                new OnCompleteListener<AuthResult>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                        if (task.isSuccessful()) {
-                                            // Sign in success, update UI with the signed-in user's information
-                                            startToast("회원가입을 성공적으로 마쳤습니다.");
-                                            FirebaseUser user = mAuth.getCurrentUser();
-                                        } else {
-                                            if (task.getException() != null) {
-                                                // If sign in fails, display a message to the user.
-                                                startToast(task.getException().toString());
-                                            }
-                                        }
-                                    }
-                                });
-            } else {
-                startToast("비밀번호가 일치하지 않습니다.");
-            }
-        } else {
-            startToast("이메일 또는 비밀번호를 입력해주세요.");
-        }
-    }
-
-    private void startToast(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-    }
-
-    private void startLoginActivity() {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-    }*/
 }
 

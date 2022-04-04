@@ -57,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                 case R.id.loginButton:
                     Log.e("클릭", "클릭");
                     attemptLogin();
+                  //  startMainActivity();
                     break;
                 case R.id.gotoSignUpButton:
                     Log.e("클릭", "클릭");
@@ -65,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     };
+
     private void attemptLogin() {
         mEmailView.setError(null);
         mPasswordView.setError(null);
@@ -80,19 +82,15 @@ public class LoginActivity extends AppCompatActivity {
             mEmailView.setError("비밀번호를 입력해주세요.");
             focusView = mEmailView;
             cancel = true;
-        } else if (!isPasswordValid(password)) {
+        }/* else if (!isPasswordValid(password)) {
             mPasswordView.setError("6자 이상의 비밀번호를 입력해주세요.");
             focusView = mPasswordView;
             cancel = true;
-        }
+        }*/
 
         // 이메일의 유효성 검사
         if (email.isEmpty()) {
             mEmailView.setError("이메일을 입력해주세요.");
-            focusView = mEmailView;
-            cancel = true;
-        } else if (!isEmailValid(email)) {
-            mEmailView.setError("@를 포함한 유효한 이메일을 입력해주세요.");
             focusView = mEmailView;
             cancel = true;
         }
@@ -124,11 +122,6 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-
-    private boolean isEmailValid(String email) {
-        return email.contains("@");
-    }
-
     private boolean isPasswordValid(String password) {
         return password.length() >= 6;
     }
@@ -137,17 +130,17 @@ public class LoginActivity extends AppCompatActivity {
         mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
-    private  void startToast(String msg){
+    private void startToast(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
-    private  void startSignUpActivity(){
+    private void startSignUpActivity(){
         Intent intent=new Intent(this,SignupActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
-    private  void startMainActivity(){
+    private void startMainActivity(){
         Intent intent=new Intent(this,MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);

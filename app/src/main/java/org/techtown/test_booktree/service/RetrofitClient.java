@@ -3,11 +3,14 @@ package org.techtown.test_booktree.service;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+// base_url 등록
+
 public class RetrofitClient {
     private final static String BASE_URL = "http://3.38.10.91:8080/";
     private static Retrofit retrofit = null;
 
     private RetrofitClient() {
+
     }
 
     public static Retrofit getClient() {

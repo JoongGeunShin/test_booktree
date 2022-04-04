@@ -6,6 +6,7 @@ public class LoginResponse {
     @SerializedName("code")
     private int code;
 
+    // test
     @SerializedName("message")
     private String message;
 
@@ -23,4 +24,5 @@ public class LoginResponse {
     public int getUserId() {
         return userId;
     }
+
 }

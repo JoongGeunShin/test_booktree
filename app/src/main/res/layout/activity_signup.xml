@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:ems="10"
-            android:hint="이메일"
+            android:hint="아이디"
             android:inputType="textEmailAddress" />
 
         <EditText
@@ -37,18 +37,8 @@
             android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="비밀번호"
-            android:textStyle="bold"
-            android:inputType="textPassword" />
-
-        <EditText
-            android:id="@+id/passwordCheckEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:hint="비밀번호 확인"
-            android:textStyle="bold"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/memeberNameText"
@@ -57,8 +47,8 @@
             android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="이름"
-            android:textStyle="bold"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/SignUpButton"
