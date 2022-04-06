@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mPasswordView;
     private Button mEmailLoginButton;
     private Button mSignUpButton;
+    private Button mNonMemberLoginButton;
     private ProgressBar mProgressView;
     private ServiceApi service;
 
@@ -42,11 +43,13 @@ public class LoginActivity extends AppCompatActivity {
         mEmailLoginButton = (Button) findViewById(R.id.loginButton);
         mSignUpButton = (Button) findViewById(R.id.gotoSignUpButton);
         mProgressView = (ProgressBar) findViewById(R.id.login_progress);
+        mNonMemberLoginButton = (Button) findViewById(R.id.nonMemLoginButton);
 
         service = RetrofitClient.getClient().create(ServiceApi.class);
 
         findViewById(R.id.loginButton).setOnClickListener(onClickListener);
         findViewById(R.id.gotoSignUpButton).setOnClickListener(onClickListener);
+        findViewById(R.id.nonMemLoginButton).setOnClickListener(onClickListener);
     }
 
 
@@ -57,11 +60,15 @@ public class LoginActivity extends AppCompatActivity {
                 case R.id.loginButton:
                     Log.e("클릭", "클릭");
                     attemptLogin();
-                  //  startMainActivity();
+                    //startMainActivity();
                     break;
                 case R.id.gotoSignUpButton:
                     Log.e("클릭", "클릭");
                     startSignUpActivity();
+                    break;
+                case R.id.nonMemLoginButton:
+                    Log.e("클릭", "클릭");
+                    startMainActivity();
                     break;
             }
         }
@@ -110,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
                 LoginResponse result = response.body();
                 Toast.makeText(LoginActivity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
                 showProgress(false);
-                startMainActivity();
+                //startMainActivity();
             }
 
             @Override

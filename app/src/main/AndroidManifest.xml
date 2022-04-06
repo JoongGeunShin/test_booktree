@@ -35,12 +35,16 @@
         </activity>
 
         <activity android:name=".SignupActivity">
-
         </activity>
-
         <activity android:name=".MainActivity">
-
         </activity>
+
+        <!--채팅-->
+        <activity android:name=".ChatStarterActivity">
+        </activity>
+        <activity android:name=".ChatChattingActivity">
+        </activity>
+
     </application>
 
 </manifest>
