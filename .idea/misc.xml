@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/androidStudioTest/Backend/test_booktree/app/src/main/res/layout/activity_chat_chatting.xml" value="0.2427536231884058" />
-        <entry key="..\:/androidStudioTest/Backend/test_booktree/app/src/main/res/layout/activity_chat_starter.xml" value="0.2427536231884058" />
+        <entry key="..\:/androidStudioTest/Backend/test_booktree/app/src/main/res/layout/activity_chat_starter.xml" value="0.1" />
+        <entry key="..\:/androidStudioTest/Backend/test_booktree/app/src/main/res/layout/activity_community.xml" value="0.3692708333333333" />
         <entry key="..\:/androidStudioTest/Backend/test_booktree/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/androidStudioTest/Backend/test_booktree/app/src/main/res/layout/activity_main.xml" value="0.12777777777777777" />
+        <entry key="..\:/androidStudioTest/Backend/test_booktree/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/androidStudioTest/Backend/test_booktree/app/src/main/res/layout/activity_profile.xml" value="0.3692708333333333" />
+        <entry key="..\:/androidStudioTest/Backend/test_booktree/app/src/main/res/layout/activity_ranking.xml" value="0.3692708333333333" />
+        <entry key="..\:/androidStudioTest/Backend/test_booktree/app/src/main/res/layout/activity_search.xml" value="0.3692708333333333" />
         <entry key="..\:/androidStudioTest/Backend/test_booktree/app/src/main/res/layout/activity_signup.xml" value="0.33" />
       </map>
     </option>

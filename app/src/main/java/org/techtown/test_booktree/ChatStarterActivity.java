@@ -110,6 +110,7 @@ public class ChatStarterActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(ChatStarterActivity.this,i+1 +"번째 톡방",Toast.LENGTH_LONG).show();
+                chat_name.setText(adapter.getItem(i));
             }
         });
     }

@@ -39,10 +39,22 @@
         <activity android:name=".MainActivity">
         </activity>
 
-        <!--채팅-->
+        <!--채팅(구현완료)-->
         <activity android:name=".ChatStarterActivity">
         </activity>
         <activity android:name=".ChatChattingActivity">
+        </activity>
+        <!--커뮤니티(추가예정)-->
+        <activity android:name=".CommunityActivity">
+        </activity>
+        <!--프로필(추가예정)-->
+        <activity android:name=".ProfileActivity">
+        </activity>
+        <!--랭킹(추가예정)-->
+        <activity android:name=".RankingActivity">
+        </activity>
+        <!--검색(추가예정)-->
+        <activity android:name=".SearchActivity">
         </activity>
 
     </application>
